@@ -1,0 +1,12 @@
+Dear Coder,
+
+GoGeocode is a simple set of Geocoding tools written in PHP with the express
+purpose of taking advantage of the full XML based formats of popular Geocoding
+APIs.
+
+It was originally written as part of a geocoding dataset generator and was
+released hoping that others might find use for it.
+
+Take, and enjoy,
+
+- Joe Bauser
