@@ -137,7 +137,7 @@ class GoogleGeocode extends BaseGeocode
 	{
 		$retVal = array();
 		$url = "http://maps.google.com/maps/geo?q=";
-		$url .= urlencode( $address ) . "&output=xml&key=" . $this->apiKey;
+		$url .= urlencode( $address ) . "&output=xml&oe=UTF-8&key=" . $this->apiKey;
 
 		$nsKml = 'http://earth.google.com/kml/2.0';
 		$nsUrn = 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0';
