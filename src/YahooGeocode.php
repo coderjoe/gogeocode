@@ -151,7 +151,7 @@ class YahooGeocode extends BaseGeocode
 
 						if( count($postalCodes) > $i && !empty($postalCodes[$i]) ) {
 							$postalCode = explode( '-', $postalCodes[$i] );
-							$retVal['Placemarks'][$i]['PostalCode'] = (int) $postalCode[0];
+							$retVal['Placemarks'][$i]['PostalCode'] = (string) $postalCode[0];
 						}
 
 						$retVal['Placemarks'][$i]['Latitude'] = (double)$latitudes[$i];

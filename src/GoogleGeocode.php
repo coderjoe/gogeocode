@@ -201,7 +201,7 @@ class GoogleGeocode extends BaseGeocode
 					}
 
 					if( count( $postalCodes ) > $i ) {
-						$retVal['Placemarks'][$i]['PostalCode'] = (int)$postalCodes[$i];
+						$retVal['Placemarks'][$i]['PostalCode'] = (string)$postalCodes[$i];
 					}
 
 					$retVal['Placemarks'][$i]['Latitude']= (double)$latitude;
