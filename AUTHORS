@@ -7,4 +7,5 @@ Maintainers:
 Contributors:
 * Casey Eyring (casey_eyring at yahoo.com)
 	- Bug report and fix for Google Geocode API UTF-8 error.
-
+* Colin Viebrock (http://github.com/cviebrock)
+	- Timeout for web requests for slow services.

@@ -42,6 +42,14 @@ abstract class BaseGeocode
 	protected $earthRadius;
 
 	/**
+	 * The timeout (in seconds) for requests to the geocoding service.
+	 *
+	 * @var float
+	 * @access protected
+	 */
+	protected $timeout;
+
+	/**
 	 * Basic public constructor which accepts an API key.
 	 * The public constructor also sets the earth's radius to its default value
 	 * in miles.
@@ -53,6 +61,7 @@ abstract class BaseGeocode
 		//by providing the earth radius in miles
 		$this->setEarthRadius( 3963.1676 );
 		$this->setKey( $key );
+		$this->setTimeout( 10 );
 	}
 
 	/**
@@ -76,6 +85,16 @@ abstract class BaseGeocode
 	}
 
 	/**
+	 * Modifier for the timeout
+	 *
+	 * @param string $timeout Timeout to use (in seconds) for requests to the geocoding service
+	 * @access public
+	 */
+	public function setTimeout( $timeout ) {
+		$this->timeout = $timeout;
+	}
+
+	/**
 	 * Load XML from an address
 	 *
 	 * @param string $address The address representing the XML source
@@ -83,7 +102,12 @@ abstract class BaseGeocode
 	 */
 	protected function loadXML( $address ) {
 		$retVal = array();
-		$contents = file_get_contents( $address );
+		$context = stream_context_create(array(
+			'http' => array(
+				'timeout' => $this->timeout
+			)
+		));
+		$contents = file_get_contents( $address, false, $context );
 
 		if( !empty( $http_response_header ) ) {
 			$code = $http_response_header[0];
