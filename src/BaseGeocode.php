@@ -102,11 +102,11 @@ abstract class BaseGeocode
 	 */
 	protected function loadXML( $address ) {
 		$retVal = array();
-		$context = array(
+		$context = stream_context_create(array(
 			'http' => array(
 				'timeout' => $this->timeout
 			)
-		);
+		));
 		$contents = file_get_contents( $address, false, $context );
 
 		if( !empty( $http_response_header ) ) {
