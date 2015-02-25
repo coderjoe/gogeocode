@@ -1,7 +1,9 @@
 Introduction
 ============
 
-GoGeocode is a small set of PHP classes that were developed to simplify the process of geocoding data using both the Google and Yahoo geocoding services.
+*I no longer have time to maintain this library, as such it has suffered some bitrot and no longer functions against the Google Geocoding API. Pull requests to fix this issue are welcome but for now I'd consider this library dead.*
+
+GoGeocode is a small set of PHP classes that were developed to simplify the process of geocoding data using both the Google v2 geocoding api and Yahoo geocoding services.
 
 While it's true that many PHP based geocoding classes exist, very few make use of the extensive data returned by the geocoding services. In many cases only the latitude and longitude coordinates are returned
 
